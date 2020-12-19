@@ -29,6 +29,8 @@
   3、学透JS执行上下文  https://juejin.cn/post/6907801557543157773/
   
   4、学透执行上下文变量对象    https://juejin.cn/post/6907804959694782477/
+  
+  5、学透作用域链     https://juejin.cn/post/6907811400320548871/
 
 
 ## 专题-webpack 系列
