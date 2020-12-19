@@ -1,5 +1,8 @@
 ## interview
-  最高效拿下技术面试（The most efficient to win the technical interview）
+  1、最高效拿下技术面试（The most efficient to win the technical interview）
+  2、整理最有效的部分，比较难理解的内容
+  3、面试心得和面试过程也会说一下
+  
 
 ## 进度 
   当前多篇文章在csdn和掘金已经发布，会整理之后，也在github同步
