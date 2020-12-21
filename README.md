@@ -33,6 +33,8 @@
   5、学透作用域链     https://juejin.cn/post/6907811400320548871/
   
   6、学透 闭包 一篇就够了    https://juejin.cn/post/6907953627223539726/
+  
+  7、一篇学透 类型转化（上）  https://juejin.cn/post/6908239708514418702
 
 
 ## 专题-webpack 系列
