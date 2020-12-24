@@ -35,7 +35,20 @@
   6、学透 闭包 一篇就够了    https://juejin.cn/post/6907953627223539726/
   
   7、一篇学透 类型转化（上）  https://juejin.cn/post/6908239708514418702
+  
+  
 
+
+## 专题-vue 精简教程系列
+  1、vue 精简教程（一） dev tools mvvm spa单页面 数据定义和渲染 https://juejin.cn/post/6909604250699956232/
+  
+  2、vue 精简教程（二 ）常用指令用法  更新超长版本   一次看个过瘾好吧  https://juejin.cn/post/6909599367410221070/
+  
+  3、vue 精简教程（三)大 组件它真的来了 组件通信方式 浅谈 过滤和 自定义组件  https://juejin.cn/post/6909604540731883528/
+  
+  4、vue 精简教程（四) vuerouter 路由  https://juejin.cn/post/6909605853205266446/#comment
+  
+  5、vue 精简教程（五)   vue-cli脚手架  https://juejin.cn/post/6909605467459321864/
 
 ## 专题-webpack 系列
   1、React 学习12-2 -- webpack必会内容（一） https://juejin.cn/post/6907575758068121607
