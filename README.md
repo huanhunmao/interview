@@ -23,7 +23,33 @@
   
   
 ## 算法 系列
-  1、
+  1、连续子数组最大和
+  输入一个整型数组，数组里有正数也有负数。数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值。要求时间复杂度为 O(n).
+  
+  算法解决：
+  function FindGreatestSumOfSubArray(array)
+{
+    // write code here
+    let l=0;
+    let r=0;
+    // 定义两个初始值 都取数组第一个数
+    let sum=array[0];
+    let max=array[0];
+    // 做循环
+    do{
+        // 负数情况
+        if(sum<array[r]){
+            max=Math.max(sum,max);
+            sum-=array[l++];
+            // 正数 
+        }else{
+            max=Math.max(sum,max);
+            sum+=array[++r];
+        }
+    }while(l<array.length&&r<array.length)
+    //返回结果
+    return max;
+}
 
 
 ## 专题-JS学透 系列
