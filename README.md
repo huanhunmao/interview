@@ -64,8 +64,8 @@
 {
 // 当num2存在时 num2不存在则直接返回num1
     while(num2){
-        var t = num1 ^ num2    //不进位的相加
-        num2 = (num1 & num2) << 1   //同1则进位
+        var t = num1 ^ num2    // 转成 2进制 相加
+        num2 = (num1 & num2) << 1   // num1 & num2 如果两个都是正数 结果为1  << 1 转为2进制后向左移动一位
         num1 = t
     }
     return num1
