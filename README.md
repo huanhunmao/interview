@@ -53,7 +53,24 @@
     return max;
 }
 ```
-
+  2、不使用 加减乘除 做加法 
+  
+  写一个函数，求两个整数之和，要求在函数体内不得使用+、-、*、/四则运算符号。
+  
+  算法解决：
+  
+  ```
+  function Add(num1, num2)
+{
+// 当num2存在时 num2不存在则直接返回num1
+    while(num2){
+        var t = num1 ^ num2    //不进位的相加
+        num2 = (num1 & num2) << 1   //同1则进位
+        num1 = t
+    }
+    return num1
+}
+  ```
 
 ## 算法 系列之 medium部分
 
