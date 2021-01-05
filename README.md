@@ -97,13 +97,38 @@ var hasCycle = function(head) {
 };
 
 ```
+  4、数组去重
+  ```
+  //方法一：数组去重常规方法   很重要的 
+    var arr = [1, 1, 2, 3, 3, 6];
 
+    function unique() {
+        var hash = [];
+        for (var i = 0; i < arr.length; i++) {
+        // hash.indexOf(arr[i])      == -1 注意前一部分写法
+            if (hash.indexOf(arr[i]) == -1) {
+                hash.push(arr[i]);
+            }
+        }
+        return hash;
+    }
+    console.log(unique(arr))
+  ```
+  ```
+  // 方法二： es6 Set方法  数组去重
+const arr = [1, 2, 1, 2];
+    const arr1 = new Set(arr)
+    console.log([...arr1]) // [1,2]  需要加一个[]不加得到的是一个集合内容为 1 2 
+  ```
+  5、算法 js原型链（链表）    https://juejin.cn/post/6914257079477731336
+  
 
 ## 算法 系列之 medium部分
 
 
 
 ## 算法 系列之 hard部分
+
 
 
 
