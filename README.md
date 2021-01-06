@@ -122,6 +122,7 @@ const arr = [1, 2, 1, 2];
   ```
   5、算法 js原型链（链表）    https://juejin.cn/post/6914257079477731336
   
+  6、 js算法之集合      https://juejin.cn/post/6914639899098529805/
 
 ## 算法 系列之 medium部分
 
