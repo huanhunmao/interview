@@ -214,6 +214,33 @@ const arr = [1, 2, 1, 2];
     return stack.length === 0
 } 
   ```
+  
+  9、两数 之和  
+  
+  输入：nums = [2,7,11,15], target = 9
+  输出：[0,1]
+  解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
+
+  ```
+  // leetcode 1 求两个数之和
+    var twoSum = function (nums, target) {
+        var map = new Map()
+        for (var i = 0; i < nums.length; i++) {
+            const n = nums[i]; // 拿到每个数组值
+            const n2 = target - n; // 匹配值
+            // 匹配到之后  拿到两个的下标
+            if (map.has(n2)) {
+                return [map.get(n2), i]
+                //没有匹配上 则 先将值和下标存在map中
+            } else {
+                map.set(n, i)
+            }
+        }
+    }
+
+    var test = twoSum([1, 2, 3, 6], 9)
+    console.log(test) // [2,3]
+  ```
 ## 算法 系列之 medium部分
 
 
