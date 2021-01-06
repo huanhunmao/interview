@@ -123,6 +123,35 @@ const arr = [1, 2, 1, 2];
   5、算法 js原型链（链表）    https://juejin.cn/post/6914257079477731336
   
   6、 js算法之集合      https://juejin.cn/post/6914639899098529805/
+  
+  7、 求两个数组的交集部分  
+  
+  ```
+  // 求数组交集 字典解法
+    var intersection = function (num1, num2) {
+        // 新建一个字典
+        var map = new Map();
+        // 遍历第一个数组 并把值放进去 值为true表示放进字典内
+        num1.forEach(n => {
+            map.set(n, true)
+        });
+        // 初始化结果 数组
+        const res = [];
+        // 遍历第二个数组
+        num2.forEach(n => {
+            // 判断 也出现的值
+            if (map.get(n)) {
+                //  放进新数组就是交集部分
+                res.push(n);
+                // 需要立即从字典删除避免得到的结果重复
+                map.delete(n);
+            }
+        })
+        return res
+    }
+    var test = intersection([1, 2, 3, 4], [1, 2]);
+    console.log(test)
+  ```
 
 ## 算法 系列之 medium部分
 
