@@ -124,7 +124,7 @@ const arr = [1, 2, 1, 2];
   
   6、 js算法之集合      https://juejin.cn/post/6914639899098529805/
   
-  7、 求两个数组的交集部分  
+  7、 求两个数组的交集部分   leetcode 349
   
   ```
       // 时间复杂度 O(M * N ) 空间 复杂度O(M) M表示num1长度 N表示num2长度
@@ -185,6 +185,7 @@ const arr = [1, 2, 1, 2];
   ```
 
   ```
+  // 时间复杂度 O(n) 空间复杂度 O(n)
   //方法二  使用 字典 优化 
    var isValid = function (s) {
     if (s.length % 2 === 1) {
