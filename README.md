@@ -153,7 +153,66 @@ const arr = [1, 2, 1, 2];
     var test = intersection([1, 2, 3, 4], [1, 2]);
     console.log(test)
   ```
+  
+  8、leetcode 20 有效的括号
+  
+  给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+  
+  ```
+  // 方法一 使用 栈 操作
+  var isValid = function (s) {
+    if (s.length % 2 === 1) {
+        return false
+    }
+    // 定义栈
+    const stack = []
+    // 遍历
+    for (var i = 0; i < s.length; i++) {
+        const c = s[i]
+        if (c === '(' || c === '{' || c === '[') {
+            stack.push(c)
+        } else {
+            const top = stack[stack.length - 1]
+            if (top === '(' && c === ')' || top === '{' && c === '}' || top === '[' && c === ']') {
+                stack.pop()
+            } else {
+                return false
+            }
+        }
+    }
+    return stack.length === 0
+}
+  ```
 
+  ```
+  //方法二  使用 字典 优化 
+   var isValid = function (s) {
+    if (s.length % 2 === 1) {
+        return false
+    }
+    // 定义栈
+    const stack = []
+    const map = new Map()
+    map.set('(',')')
+    map.set('[',']')
+    map.set('{','}')
+    // 遍历
+    for (var i = 0; i < s.length; i++) {
+        const c = s[i]
+        if (map.has(c)) {
+            stack.push(c)
+        } else {
+            const top = stack[stack.length - 1]
+            if (map.get(top) === c) {
+                stack.pop()
+            } else {
+                return false
+            }
+        }
+    }
+    return stack.length === 0
+} 
+  ```
 ## 算法 系列之 medium部分
 
 
