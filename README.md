@@ -223,6 +223,7 @@ const arr = [1, 2, 1, 2];
 
   ```
   // leetcode 1 求两个数之和
+  // 时间复杂度 O(n)  空间复杂度 O(n)
     var twoSum = function (nums, target) {
         var map = new Map()
         for (var i = 0; i < nums.length; i++) {
