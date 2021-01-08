@@ -225,6 +225,7 @@ const arr = [1, 2, 1, 2];
   // leetcode 1 求两个数之和
   // 时间复杂度 O(n)  空间复杂度 O(n)
     var twoSum = function (nums, target) {
+    //新建一个字典
         var map = new Map()
         for (var i = 0; i < nums.length; i++) {
             const n = nums[i]; // 拿到每个数组值
@@ -242,12 +243,100 @@ const arr = [1, 2, 1, 2];
     var test = twoSum([1, 2, 3, 6], 9)
     console.log(test) // [2,3]
   ```
+  
+
+  
 ## 算法 系列之 medium部分
 
+  1、leetcode   3. 无重复字符的最长子串
+  
+  给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+  ```
+  输入: s = "abcabcbb"
+  输出: 3 
+  解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+  ```
+  ```
+  // 时间复杂度O(n) n表示s.length 空间复杂度 O(m)  m是字符串 不重复字符个数
+  var lengthOfLongestSubstring = function (s) {
+        // 新建两个移动指针 l r
+        let l = 0;
+        // 初始化结果
+        let res = 0;
+        // 新建字典 
+        const map = new Map();
+        for (var r = 0; r < s.length; r++) {
+            // 如果字典中 再次出现右指针指向的东西
+            if (map.has(s[r]) && map.get(s[r] >= l)) {
+                // 左指针向右指针下一位移动
+                l = map.get(s[r]) + 1;
+            }
+            res = Math.max(res, r - l + 1);
+            map.set(s[r], r)
+        }
+        return res;
+    }
+  ```
 
 
 ## 算法 系列之 hard部分
 
+  1、leetcode    76. 最小覆盖子串
+  
+  给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 "" 。
+
+注意：如果 s 中存在这样的子串，我们保证它是唯一的答案。
+
+```
+    // leetcode 76  最小覆盖长度
+    var minWindow = function (s, t) {
+        // 新建两个移动指针
+        var l = 0;
+        var r = 0;
+        // 新建一个字典
+        var need = new Map();
+        // 循环遍历 t 
+        for (let c of t) {
+            need.set(c, need.has(c) ? need.get(c) + 1 : 1)
+        }
+        // console.log(need)    //Map(3) {"A" => 1, "B" => 1, "C" => 1}
+
+        // 字典长度 赋给t 中的需求类型 
+        let needType = need.size;
+        // 初始化结果
+        let res = "";
+        while (r < s.length) {
+            // 找到 t中匹配的每个字符后 减一 找剩下的
+            // 遍历右 指针
+            const c = s[r];
+            if (need.has(c)) {
+                need.set(c, need.get(c) - 1);
+                if (need.get(c) === 0) {
+                    needType -= 1
+                }
+            }
+            // 当 t中的都找到了 需要缩小范围
+            while (needType === 0) {
+                // console.log(s.substring(l, r + 1))
+                const newRes = s.substring(l, r + 1);
+                if (!res || newRes.length < res.length) {
+                    res = newRes
+                }
+                const c2 = s[l];
+                if (need.has[c2]) {
+                    need.set(c2, need.get(c2) + 1)
+                    if (need.get(c2) === 1) {
+                        needType += 1
+                    }
+                }
+                l += 1;
+            }
+            r = r + 1;
+        }
+
+        return res
+    }
+```
 
 
 
