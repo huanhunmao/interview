@@ -283,6 +283,34 @@ var maxDepth = function(root) {
     };
   ```
   
+  12、leetcode 111  二叉树最小深度 
+  ```
+  /**
+ * @param {TreeNode} root
+ * @return {number}
+ * 注意 这个地方需要注意 广度优先遍历获取每个层级的方式是改成数组
+ * 每一块加数组 两个参数 第二个参数是 l 层级
+ */
+var minDepth = function(root) {
+    if(!root) {return 0}
+    // 新建队列 并将根节点放进去
+    // 里面再放一个数组 是为了 记录每一个层级 初始值为1
+    const q = [[root,1]]
+    while(q.length){
+        // 拿到队头 并访问
+        const [n,l] = q.shift()
+        //得到每一层层级
+        // console.log(n.val,l)
+        //遇到叶子节点（没有左节点和右节点 直接返回它的层级就是最小层级）
+        if(!n.left && !n.right){
+            return l
+        }
+        // 将它的子节点放到队列内
+        if(n.left) q.push([n.left,l+1])
+        if(n.right) q.push([n.right,l+1])
+    }
+};
+  ```
 ## 算法 系列之 medium部分
 
   1、leetcode   3. 无重复字符的最长子串
