@@ -268,7 +268,10 @@ var maxDepth = function(root) {
             // 先访问当前节点
             // console.log(n.val,l)
             // 拿到层级比较大的结果
-            deep = Math.max(deep,l)  
+            //判断一下 叶子节点才计算最大深度 节省性能
+            if(!n.left && !n.right){
+            deep = Math.max(deep,l)
+        } 
             //访问左节点
             dfs(n.left,l+1)
             //访问右节点
