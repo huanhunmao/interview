@@ -290,6 +290,8 @@ var maxDepth = function(root) {
  * @return {number}
  * 注意 这个地方需要注意 广度优先遍历获取每个层级的方式是改成数组
  * 每一块加数组 两个参数 第二个参数是 l 层级
+ * 时间复杂度 O(n) 最坏的情况 n表示需要循环遍历所有树的节点
+ * 空间复杂度 O(n) 最坏情况  队列需要装满 树中节点
  */
 var minDepth = function(root) {
     if(!root) {return 0}
