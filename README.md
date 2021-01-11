@@ -246,6 +246,39 @@ const arr = [1, 2, 1, 2];
   
   10、javascript 算法之 树    必出精品 （递归版本简单 非递归版本面试很重要）（一）  https://juejin.cn/post/6916503216288956429
   
+  11、leetcode 104 二叉树最大  深度
+  
+  ```
+  /**
+ * @param {TreeNode} root
+ * @return {number}
+ * 1、新建变量 存放层级 deep
+ * 2、深度优先遍历  
+ * 3、刷新 deep值  传入参数 l 先拿到每一层的deep 初始为1
+ * 4、拿到层级最大值 Math.max(deep,l)
+ */
+var maxDepth = function(root) {
+    // 新建变量记录层级
+ var deep = 0;
+ // 深度优先遍历 dfs函数
+        var dfs = function (n,l) {
+            if (!n) {
+                return
+            }
+            // 先访问当前节点
+            // console.log(n.val,l)
+            // 拿到层级比较大的结果
+            deep = Math.max(deep,l)  
+            //访问左节点
+            dfs(n.left,l+1)
+            //访问右节点
+            dfs(n.right,l+1)
+        }
+        // 1 表示传入的默认层级 初始化 层级是 1
+       dfs(root,1) // 调用根节点
+       return deep
+    };
+  ```
   
 ## 算法 系列之 medium部分
 
