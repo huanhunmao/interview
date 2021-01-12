@@ -10,16 +10,17 @@
   当前多篇文章在csdn和掘金已经发布，会整理之后，也在github同步
   
 ## 专题
-  Csdn地址：https://blog.csdn.net/weixin_43815680/article/details/108506250
-
-  博客地址（完善中）：https://huanhunmao.github.io/
   
   掘金：https://juejin.cn/post/6907573102511816712
-
+  
   知乎：https://www.zhihu.com/people/got-81
 
   B站：https://www.bilibili.com/video/BV1gi4y177ZW
   
+  博客地址（完善中）：https://huanhunmao.github.io/
+  
+  Csdn地址：https://blog.csdn.net/weixin_43815680/article/details/108506250
+
   
   
 ## 算法 系列之 easy部分
@@ -313,6 +314,49 @@ var minDepth = function(root) {
     }
 };
   ```
+  
+  * 分解一下 第一步 广度优先遍历
+```
+var minDepth = function(root) {
+    if(!root){return 0}
+    const q = [root]
+    while(q.length){
+        const n = q.shift()
+        console.log(n.val)
+        if(n.left) q.push(n.left)
+        if(n.right) q.push(n.right)
+    }
+};
+```
+* 每一层层级
+```
+var minDepth = function(root) {
+    if(!root){return 0}
+    const q = [[root,1]]
+    while(q.length){
+        const [n,l] = q.shift()
+        console.log(n.val,l)
+        if(n.left) q.push([n.left,l+1])
+        if(n.right) q.push([n.right,l+1])
+    }
+};
+```
+* 找到叶子节点    求最小深度
+```
+var minDepth = function(root) {
+    if(!root){return 0}
+    const q = [[root,1]]
+    while(q.length){
+        const [n,l] = q.shift()
+        if(!n.left && !n.right){
+            return l
+        }
+        // console.log(n.val,l)
+        if(n.left) q.push([n.left,l+1])
+        if(n.right) q.push([n.right,l+1])
+    }
+};
+```
 ## 算法 系列之 medium部分
 
   1、leetcode   3. 无重复字符的最长子串
